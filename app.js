@@ -14,7 +14,7 @@ var logger = function(req, res, next) {
 }
 
 app.use(logger);*/
-
+console.log(66666);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/public/views'));
 
