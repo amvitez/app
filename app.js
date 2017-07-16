@@ -28,6 +28,7 @@ var uri = 'mongodb://heroku_93hrxj6h:fnq24dnqc0lpqvo9l9m7f8rf4v@ds161162.mlab.co
 mongodb.MongoClient.connect(uri, function(err, db) { 
 	console.log(99);
 	console.log(err);
+	var songs = db.collection('songs');
 });
 
 app.get('/', function (req, res, next) {
