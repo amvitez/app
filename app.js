@@ -48,7 +48,7 @@ app.get('/ingredients', function (req, res, next) {
 
 app.post('/import-ingredients', function (req, res, next) {
     var i = {
-    	name: req.body.name
+    	name: req.body[0].name
     };
 
 	ingredients.insert(i, function(err, res) {

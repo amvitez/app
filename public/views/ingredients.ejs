@@ -14,14 +14,12 @@
 <script type="text/javascript">
 	function importIngredients() {
 		var i = localStorage.getItem("Fri");
-		alert(i);
+		//alert(i);
 
 		var a = [];
 		a.push({
-			name: "test"
+			name: "test2"
 		});
-		$.post("/import-ingredients", {
-			name: "test"
-		});
+		$.post("/import-ingredients", a);
 	}
 </script>
