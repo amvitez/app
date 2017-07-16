@@ -47,7 +47,9 @@ app.get('/ingredients', function (req, res, next) {
 });
 
 app.post('/import-ingredients', function (req, res, next) {
-	db.ingredients.insert(req.body.data);
+	db.ingredients.insert(req.body, function(err, res) {
+		console.log(err);
+	});
 });
 
 app.listen(process.env.PORT || 3000, function () {
