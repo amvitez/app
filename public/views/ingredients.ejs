@@ -16,6 +16,10 @@
 		var i = localStorage.getItem("Fri");
 		alert(i);
 
-		$.post("/import-ingredients", {data: i});
+		var a = [];
+		a.push({
+			name: "test"
+		});
+		$.post("/import-ingredients", {data: a});
 	}
 </script>
