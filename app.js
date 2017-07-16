@@ -2,6 +2,7 @@ var express = require('express');
 var bp = require('body-parser');
 var path = require('path');
 var mongojs = require('mongojs');
+var mongodb = require('mongodb');
 //var db = mongojs(connectionString, ['ingredients']);
 
 var app = express();
@@ -21,6 +22,13 @@ app.use(bp.json());
 app.use(bp.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+var uri = 'mongodb://heroku_93hrxj6h:fnq24dnqc0lpqvo9l9m7f8rf4v@ds161162.mlab.com:61162/heroku_93hrxj6h';
+
+mongodb.MongoClient.connect(uri, function(err, db) { 
+	console.log(99);
+	console.log(err);
+});
 
 app.get('/', function (req, res, next) {
 	res.render('index', {
