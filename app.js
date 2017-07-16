@@ -25,9 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var uri = 'mongodb://heroku_93hrxj6h:fnq24dnqc0lpqvo9l9m7f8rf4v@ds161162.mlab.com:61162/heroku_93hrxj6h';
 var db;
+var ingredients;
 
 mongodb.MongoClient.connect(uri, function(err, _db) { 
 	db = _db;
+	ingredients = db.collection('ingredients');
 });
 
 app.get('/', function (req, res, next) {
@@ -45,7 +47,7 @@ app.get('/ingredients', function (req, res, next) {
 });
 
 app.post('/import-ingredients', function (req, res, next) {
-	db.songs.insert(req.body.ingredients);
+	ingredients.insert(req.body.ingredients);
 });
 
 app.listen(process.env.PORT || 3000, function () {
