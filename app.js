@@ -23,12 +23,37 @@ app.use(bp.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+var seedData = [
+  {
+    decade: '1970s',
+    artist: 'Debby Boone',
+    song: 'You Light Up My Life',
+    weeksAtOne: 10
+  },
+  {
+    decade: '1980s',
+    artist: 'Olivia Newton-John',
+    song: 'Physical',
+    weeksAtOne: 10
+  },
+  {
+    decade: '1990s',
+    artist: 'Mariah Carey',
+    song: 'One Sweet Day',
+    weeksAtOne: 16
+  }
+];
+
 var uri = 'mongodb://heroku_93hrxj6h:fnq24dnqc0lpqvo9l9m7f8rf4v@ds161162.mlab.com:61162/heroku_93hrxj6h';
 
 mongodb.MongoClient.connect(uri, function(err, db) { 
 	console.log(99);
 	console.log(err);
 	var songs = db.collection('songs');
+	songs.insert(seedData, function(err, result) {
+    
+    if(err) throw err;
+});
 });
 
 app.get('/', function (req, res, next) {
