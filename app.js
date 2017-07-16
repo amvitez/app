@@ -47,7 +47,11 @@ app.get('/ingredients', function (req, res, next) {
 });
 
 app.post('/import-ingredients', function (req, res, next) {
-	ingredients.insert(req.body, function(err, res) {
+    var i = {
+    	name: req.body.name
+    };
+
+	ingredients.insert(i, function(err, res) {
 		console.log(err);
 	});
 });
