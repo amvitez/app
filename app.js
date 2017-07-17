@@ -79,7 +79,9 @@ app.post('/import-ingredients', function (req, res, next) {
 		    	} 
 
 		    	ingredients.insert(ingredient, function(err){
-				   if (err) return;
+				   res.render('index', {
+			title: "Smart Meals-"
+		});
 				   // Object inserted successfully.
 				   /*ingredientId = ingredient._id; // this will return the id of object inserted
 				   var newServing = {
