@@ -13,13 +13,9 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript">
 	function importIngredients() {
-		var i = localStorage.getItem("Fri");
-		//alert(i);
+		var i = localStorage.getItem("ingredient_nutrition");
+		
 
-		var a = [];
-		a.push({
-			name: "test2"
-		});
-		$.post("/import-ingredients", a);
+		$.post("/import-ingredients", i);
 	}
 </script>
