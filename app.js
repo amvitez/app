@@ -53,7 +53,11 @@ app.post('/import-ingredients', function (req, res, next) {
     //var i = {
     //	name: req.body[0].name
     //};
-    try {
+    //try {
+    	res.render('ingredients', {
+			ingredients: [],
+			error: null
+		});
 	    var data = req.body || [];
 
 	    /*for (var j = 0; j < data.length; j++) {
