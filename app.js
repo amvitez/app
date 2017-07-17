@@ -58,7 +58,7 @@ app.post('/import-ingredients', function (req, res, next) {
 
 	    for (var j = 0; j < data.length; j++) {
 	    	var a = data[j];
-	    	var s = a.serving;
+	    	//var s = a.serving;
 	    	var ingredientId;
 
 	    	var ingredient = {
