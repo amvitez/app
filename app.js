@@ -93,9 +93,8 @@ app.post('/import-ingredients', function (req, res, next) {
 	    	}
 	    }
 	} catch(err) {
-		res.render('ingredients', {
-			ingredients: [],
-			error: err
+		res.render('index', {
+			title: "Smart Meals-"
 		});
 	}
 });
