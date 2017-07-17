@@ -43,7 +43,8 @@ app.get('/', function (req, res, next) {
 app.get('/ingredients', function (req, res, next) {
 	//db.ingredients.find(function(err, docs) {
 		res.render('ingredients', {
-			ingredients: []
+			ingredients: [],
+			error: null
 		});
 	//});
 });
