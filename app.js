@@ -73,7 +73,7 @@ app.post('/import-ingredients', function (req, res, next) {
 				};
 
 				servings.insert(newServing);
-	    	} else {
+	    	}/* else {
 	    		var ingredient = {
 		    		name: a.ingredient
 		    	} 
@@ -90,7 +90,7 @@ app.post('/import-ingredients', function (req, res, next) {
 
 					servings.insert(newServing);
 				});
-	    	}
+	    	}*/
 	    }
 	} catch(err) {
 		res.render('ingredients', {
