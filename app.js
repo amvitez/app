@@ -73,7 +73,7 @@ app.post('/import-ingredients', function (req, res, next) {
 				};
 
 				servings.insert(newServing);
-	    	}/* else {
+	    	} else {
 	    		var ingredient = {
 		    		name: a.ingredient
 		    	} 
@@ -81,16 +81,16 @@ app.post('/import-ingredients', function (req, res, next) {
 		    	ingredients.insert(ingredient, function(err){
 				   if (err) return;
 				   // Object inserted successfully.
-				   ingredientId = ingredient._id; // this will return the id of object inserted
+				   /*ingredientId = ingredient._id; // this will return the id of object inserted
 				   var newServing = {
 						ingredientId: ingredientId,
 						unit: s,
 						nutrition: a.nutrition 
 					};
 
-					servings.insert(newServing);
+					servings.insert(newServing);*/
 				});
-	    	}*/
+	    	}
 	    }
 	} catch(err) {
 		res.render('ingredients', {
