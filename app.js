@@ -61,8 +61,14 @@ app.post('/import-ingredients', function (req, res, next) {
 	    	var s = a.serving;
 	    	var ingredientId;
 
+	    	var ingredient = {
+		    		name: a.ingredient
+		    	} 
+
+		    	ingredients.insert(ingredient);
+
 	    	// check ingredients for name
-	    	var exists = ingredients.find({name: a.ingredient});
+	    	/*var exists = ingredients.find({name: a.ingredient});
 
 	    	if (exists) {
 	    		ingredientId = exists._id;
@@ -90,7 +96,7 @@ app.post('/import-ingredients', function (req, res, next) {
 
 					servings.insert(newServing);
 				});
-	    	}
+	    	}*/
 	    }
 	} catch(err) {
 		res.render('index', {
