@@ -97,7 +97,7 @@ app.post('/import-ingredients', function (req, res, next) {
 					servings.insert(newServing);
 				});
 	    	}*/
-	    }
+	    //}
 	} catch(err) {
 		res.render('index', {
 			title: "Smart Meals-"
