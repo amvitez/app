@@ -13,7 +13,7 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript">
 	function importIngredients() {
-		var i = localStorage.getItem("ingredient_nutrition");
+		var i = SON.parse(localStorage.getItem("ingredient_nutrition"));
 		
 
 		$.post("/import-ingredients", i);
