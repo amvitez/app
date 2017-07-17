@@ -65,7 +65,7 @@ app.post('/import-ingredients', function (req, res, next) {
 		    		name: a.ingredient
 		    	} 
 
-		    	ingredients.insert(ingredient);
+		    	//ingredients.insert(ingredient);
 
 	    	// check ingredients for name
 	    	/*var exists = ingredients.find({name: a.ingredient});
