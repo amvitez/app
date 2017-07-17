@@ -102,11 +102,11 @@ app.post('/import-ingredients', function (req, res, next) {
 				});
 	    	}*/
 	    //}
-	} catch(err) {
-		res.render('index', {
-			title: "Smart Meals-"
-		});
-	}
+	//} catch(err) {
+	//	res.render('index', {
+	//		title: "Smart Meals-"
+	//	});
+//	}
 });
 
 app.listen(process.env.PORT || 3000, function () {
